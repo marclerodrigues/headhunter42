@@ -1,0 +1,25 @@
+image: codeminer42/ci-ruby:2.3
+
+services:
+  - postgres:latest
+
+cache:
+  key: Headhunter42
+  untracked: true
+  paths:
+    - .ci_cache/
+
+variables:
+  RAILS_ENV: test
+  DATABASE_URL: postgresql://postgres@postgres
+
+before_script:
+  - bundle install --without development production -j $(nproc) --path .ci_cache
+  - cp .env.sample .env
+  - cp config/database.yml.sample config/database.yml
+  - bundle exec rake --trace db:setup
+
+test:
+  script:
+    - bundle exec rspec
+
