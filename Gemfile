@@ -17,7 +17,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker'
+gem 'webpacker', '~> 3.4.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -38,19 +38,19 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-  gem 'pry-rails'
-  gem 'pry-byebug'
-  gem 'factory_bot_rails'
-  gem 'bullet'
+  gem 'selenium-webdriver', '~> 3.11.0'
+  gem 'pry-rails', '~> 0.3.6'
+  gem 'pry-byebug', '~> 3.6.0'
+  gem 'factory_bot_rails', '~> 4.8.2'
+  gem 'bullet', '~> 5.7.5'
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'rspec-rails'
-  gem 'database_cleaner'
-  gem 'dotenv-rails'
-  gem 'ffaker'
-  gem 'simplecov'
-  gem 'vcr'
-  gem 'webmock'
+  gem 'rspec-rails', '~> 3.7.2'
+  gem 'database_cleaner', '~> 1.6.2'
+  gem 'dotenv-rails', '~> 2.2.1'
+  gem 'ffaker', '~> 2.8.1'
+  gem 'simplecov', '~> 0.16.1'
+  gem 'vcr', '~> 4.0.0'
+  gem 'webmock', '~> 3.3.0'
 end
 
 group :test do
@@ -62,7 +62,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '~> 2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
@@ -70,5 +70,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :staging, :production do
-  gem 'rails_12factor'
+  gem 'rails_12factor', '~> 0.0.3'
 end
