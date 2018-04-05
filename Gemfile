@@ -53,6 +53,10 @@ group :development, :test do
   gem 'webmock'
 end
 
+group :test do
+  gem 'rails-controller-testing', '~> 1.0.2'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
