@@ -243,36 +243,36 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bullet
+  bullet (~> 5.7.5)
   byebug
   capybara (~> 2.13)
-  database_cleaner
-  dotenv-rails
-  factory_bot_rails
-  ffaker
+  database_cleaner (~> 1.6.2)
+  dotenv-rails (~> 2.2.1)
+  factory_bot_rails (~> 4.8.2)
+  ffaker (~> 2.8.1)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
-  pry-byebug
-  pry-rails
+  pry-byebug (~> 3.6.0)
+  pry-rails (~> 0.3.6)
   puma (~> 3.7)
   rails (~> 5.1.6)
   rails-controller-testing (~> 1.0.2)
-  rails_12factor
-  rspec-rails
+  rails_12factor (~> 0.0.3)
+  rspec-rails (~> 3.7.2)
   sass-rails (~> 5.0)
-  selenium-webdriver
+  selenium-webdriver (~> 3.11.0)
   shoulda-matchers (~> 3.1)
-  simplecov
-  spring
+  simplecov (~> 0.16.1)
+  spring (~> 2.0.2)
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
-  vcr
+  vcr (~> 4.0.0)
   web-console (>= 3.3.0)
-  webmock
-  webpacker
+  webmock (~> 3.3.0)
+  webpacker (~> 3.4.1)
 
 BUNDLED WITH
    1.16.1
