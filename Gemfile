@@ -72,3 +72,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :staging, :production do
   gem 'rails_12factor', '~> 0.0.3'
 end
+
+# Added at 2018-04-09 09:09:41 -0300 by marcoechevestre:
+gem "enumerize", "~> 2.2"
