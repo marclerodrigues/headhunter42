@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem "enumerize", "~> 2.2"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -72,6 +74,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :staging, :production do
   gem 'rails_12factor', '~> 0.0.3'
 end
-
-# Added at 2018-04-09 09:09:41 -0300 by marcoechevestre:
-gem "enumerize", "~> 2.2"
