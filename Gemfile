@@ -33,8 +33,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'enumerize', '~> 2.2'
 gem 'devise', '~> 4.4.3'
 
-gem "dotenv", "~> 2.2"
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -56,6 +54,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.16.1'
   gem 'vcr', '~> 4.0.0'
   gem 'webmock', '~> 3.3.0'
+  gem "dotenv", "~> 2.2"
 end
 
 group :test do
