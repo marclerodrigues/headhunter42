@@ -12,4 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap/dist/css/bootstrap
+ *= require admin-lte/dist/css/AdminLTE
+ *= require admin-lte/dist/css/skins/skin-red
+ *= require font-awesome/css/font-awesome
+ *= require ionicons/dist/css/ionicons
  */
