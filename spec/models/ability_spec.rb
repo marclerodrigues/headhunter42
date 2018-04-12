@@ -12,10 +12,9 @@ RSpec.describe Ability, type: :model do
     end
   end
 
-
   context "reviewer" do
-    let(:admin) { build(:user, role: :admin) }
-    let(:ability) { described_class.new(admin) }
+    let(:reviewer) { build(:user, role: :reviewer) }
+    let(:ability) { described_class.new(reviewer) }
 
     it "read all" do
       expect(ability).to be_able_to(:read, :all)

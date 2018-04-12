@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe Reviewer::BaseController, type: :controller do
+
   controller do
     def index; end
   end
 
   context "when reviewer" do
     let(:user) { create(:user, role: :reviewer) }
-
     before { sign_in user }
 
     it "returns the correct response" do
