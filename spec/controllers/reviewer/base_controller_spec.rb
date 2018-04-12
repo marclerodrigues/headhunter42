@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UsersControlles, type: :controller do
+RSpec.describe UsersController, type: :controller do
   controller do
     def index; end
   end
