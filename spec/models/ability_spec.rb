@@ -21,4 +21,16 @@ RSpec.describe Ability, type: :model do
     end
   end
 
+  context "candidate" do
+    let(:candidate) { build(:user, role: :candidate) }
+    let(:ability) { described_class.new(candidate) }
+
+    it "cannot manage all" do
+      expect(ability).to_not be_able_to(:manage, :all)
+    end
+
+    it "cannot read all" do
+      expect(ability).to_not be_able_to(:read, :all)
+    end
+  end
 end
