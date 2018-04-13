@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Reviewer::DashboardsController, type: :controller do
   describe 'GET #index' do
+    let(:user) { create(:user, role: :reviewer) }
+    before { sign_in user }
+
     before do
       get :index
     end

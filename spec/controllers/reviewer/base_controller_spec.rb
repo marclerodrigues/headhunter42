@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe Reviewer::BaseController, type: :controller do
 
   controller do
-    def index; end
+    def index
+      render :html => "<p>Hello World</p>"
+    end
   end
 
   context "when reviewer" do
@@ -15,4 +17,5 @@ RSpec.describe Reviewer::BaseController, type: :controller do
       expect(response).to be_successful
     end
   end
+
 end

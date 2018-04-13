@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Admin::DashboardsController, type: :controller do
   describe 'GET #index' do
+    let(:user) { create(:user, role: :admin) }
     before do
+      sign_in user
       get :index
     end
 

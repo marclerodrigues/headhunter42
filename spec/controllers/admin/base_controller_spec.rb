@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Admin::BaseController, type: :controller do
-
   controller do
-    def index; end
+    def index
+      render :html => "<p>Hello World</p>"
+    end
   end
 
   context "when admin" do
