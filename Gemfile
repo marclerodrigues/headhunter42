@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'enumerize', '~> 2.2'
 gem 'devise', '~> 4.4.3'
 
+gem "cancancan", "~> 2.1"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

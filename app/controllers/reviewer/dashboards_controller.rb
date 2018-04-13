@@ -1,5 +1,6 @@
 module Reviewer
-  class DashboardsController < ::BaseAdminController
+  class DashboardsController < ::Reviewer::BaseController
+
     def index
     end
   end
