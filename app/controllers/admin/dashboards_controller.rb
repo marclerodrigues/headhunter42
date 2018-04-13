@@ -5,6 +5,5 @@ module Admin
     def index
       render 'index'
     end
-
   end
 end

@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'cancan/matchers'
 
 RSpec.describe Ability, type: :model do
-
   context "admin" do
     let(:admin) { build(:user, role: :admin) }
     let(:ability) { described_class.new(admin) }
