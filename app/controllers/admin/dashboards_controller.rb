@@ -3,7 +3,6 @@ module Admin
     layout 'admin'
 
     def index
-      render 'index'
     end
   end
 end
