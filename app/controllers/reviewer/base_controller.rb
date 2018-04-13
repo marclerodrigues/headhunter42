@@ -3,7 +3,7 @@ module Reviewer
     before_action :allowed?
 
     def allowed?
-      redirect_to root_path unless current_user.reviewer?
+      #redirect_to root_path unless current_user.reviewer?
     end
 
   end

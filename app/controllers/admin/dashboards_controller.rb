@@ -1,8 +1,9 @@
 module Admin
   class DashboardsController < BaseController
-    load_and_authorize_resource
+    layout 'admin'
 
     def index
+      render 'index'
     end
 
   end
