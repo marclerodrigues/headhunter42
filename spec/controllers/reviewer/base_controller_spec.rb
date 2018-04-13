@@ -4,7 +4,7 @@ RSpec.describe Reviewer::BaseController, type: :controller do
 
   controller do
     def index
-      render :html => "<p>Hello World</p>"
+      head :ok
     end
   end
 
