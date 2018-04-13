@@ -1,5 +1,5 @@
 module Admin
-  class DashboardsController < BaseController
+  class DashboardsController < ::Admin::BaseController
     layout 'admin'
 
     def index

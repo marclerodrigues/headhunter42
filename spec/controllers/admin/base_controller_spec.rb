@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::BaseController, type: :controller do
   controller do
     def index
-      render :html => '<p>Hello World</p>'
+      render :html => '<head></head>'
     end
   end
 
