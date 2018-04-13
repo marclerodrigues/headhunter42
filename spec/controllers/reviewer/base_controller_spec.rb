@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Reviewer::BaseController, type: :controller do
-
   controller do
     def index
       head :ok
