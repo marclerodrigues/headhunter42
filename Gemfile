@@ -56,6 +56,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.16.1'
   gem 'vcr', '~> 4.0.0'
   gem 'webmock', '~> 3.3.0'
+  gem "dotenv", "~> 2.2"
 end
 
 group :test do

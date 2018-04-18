@@ -265,6 +265,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   database_cleaner (~> 1.6.2)
   devise (~> 4.4.3)
+  dotenv (~> 2.2)
   dotenv-rails (~> 2.2.1)
   enumerize (~> 2.2)
   factory_bot_rails (~> 4.8.2)
