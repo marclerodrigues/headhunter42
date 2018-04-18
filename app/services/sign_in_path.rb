@@ -5,8 +5,8 @@ class SignInPath
 
   def path
     return 'admin/dashboards#index' if user.admin?
-    return "reviewer/dashboards#index" if user.reviewer?
-#    return 'candidate/dashboards#index' if user.candidate?
+    return 'reviewer/dashboards#index' if user.reviewer?
+    return 'admin/dashboards#index' if user.candidate?
   end
 
  private
