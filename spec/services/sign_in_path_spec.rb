@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe SignInPath do
+RSpec.describe SignInPath, routes: true do
   describe'#path' do
-    include Rails.application.routes.url_helpers
 
     context 'when the user is admin' do
       let(:admin) { build(:user, role: :admin)}
