@@ -35,6 +35,9 @@ gem 'devise', '~> 4.4.3'
 
 gem "cancancan", "~> 2.1"
 
+gem 'refile', github: 'refile/refile', require: 'refile/rails'
+gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -78,3 +81,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :staging, :production do
   gem 'rails_12factor', '~> 0.0.3'
 end
+
+# Added at 2018-04-20 16:27:27 -0300 by marcoechevestre:
+gem "refile-s3", "~> 0.2.0"

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :companies
   root to: 'admin/dashboards#index'
+  resources :company_form, only: [:edit, :update]
 
   devise_for :user, skip: :registrations
 
