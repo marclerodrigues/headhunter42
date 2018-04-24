@@ -36,6 +36,8 @@ gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'refile-s3', '~> 0.2.0'
 gem 'simple_form', '~> 4.0'
 gem 'bootstrap-sass', '~> 3.3'
+gem 'jquery-rails', '~> 4.3'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -79,6 +81,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :staging, :production do
   gem 'rails_12factor', '~> 0.0.3'
 end
-
-# Added at 2018-04-23 23:40:59 -0300 by marcoechevestre:
-gem "jquery-rails", "~> 4.3"

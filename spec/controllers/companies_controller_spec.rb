@@ -6,7 +6,7 @@ RSpec.describe CompaniesController, type: :controller do
     let(:company_attributes) { attributes_for(:company) }
 
     context 'when successful' do
-      before { put :update, :id => company.id, :company => company_attributes }
+      before { put :update, id: company.id, company: company_attributes }
       it 'renders the correct template' do
         expect(response).to redirect_to :index
       end
@@ -22,7 +22,7 @@ RSpec.describe CompaniesController, type: :controller do
     end
 
     context 'when not successful'
-      before { put :update, :id => "", :company => "" }
+      before { put :update, id: "", company: "" }
       it 'does not update the company' do
         expect(response).to_not be_successful
       end
@@ -40,7 +40,7 @@ RSpec.describe CompaniesController, type: :controller do
   describe 'GET#edit' do
     before do
       let(:company) { create(:company) }
-      get :edit, { :id => company.id}
+      get :edit, { id: company.id}
     end
 
     it 'works correctly' do
