@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CompanyForm, type: :form do
-  context 'validates tests' do
+  context 'validations' do
     subject { build(:company)}
 
     it { is_expected.to validate_presence_of(:name)}
