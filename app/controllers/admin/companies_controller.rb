@@ -1,6 +1,6 @@
 module Admin
     class CompaniesController < ::Admin::BaseController
-    before_action: :set_company, only: [:edit, :update]
+    before_action :set_company, only: [:edit, :update]
 
     def update
       if @company.update_attributes(company_params)
@@ -16,7 +16,7 @@ module Admin
     end
 
     def set_company
-      @company = CompanyForm.find(params[:id])
+      @company = Company.first
     end
 
     def company_params

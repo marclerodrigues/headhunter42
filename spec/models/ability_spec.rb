@@ -6,8 +6,12 @@ RSpec.describe Ability, type: :model do
     let(:admin) { build(:user, role: :admin) }
     let(:ability) { described_class.new(admin) }
 
-    it 'manage all' do
+    it 'can manage all' do
       expect(ability).to be_able_to(:manage, :all)
+    end
+
+    it 'can manage the object Company' do
+      expec(ability).to be_able_to(:manage, Company)
     end
   end
 
@@ -17,6 +21,10 @@ RSpec.describe Ability, type: :model do
 
     it 'read all' do
       expect(ability).to be_able_to(:read, :all)
+    end
+
+    it 'cannot manage the object Company' do
+      expec(ability).to_not be_able_to(:manage, Company)
     end
   end
 
@@ -30,6 +38,10 @@ RSpec.describe Ability, type: :model do
 
     it 'cannot read all' do
       expect(ability).to_not be_able_to(:read, :all)
+    end
+
+    it 'cannot manage the object Company' do
+      expec(ability).to_not be_able_to(:manage, Company)
     end
   end
 end
