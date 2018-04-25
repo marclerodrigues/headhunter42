@@ -11,7 +11,7 @@ RSpec.describe Ability, type: :model do
     end
 
     it 'can manage the object Company' do
-      expec(ability).to be_able_to(:manage, Company)
+      expect(ability).to be_able_to(:manage, Company)
     end
   end
 
@@ -24,7 +24,7 @@ RSpec.describe Ability, type: :model do
     end
 
     it 'cannot manage the object Company' do
-      expec(ability).to_not be_able_to(:manage, Company)
+      expect(ability).to_not be_able_to(:manage, Company)
     end
   end
 
@@ -41,7 +41,7 @@ RSpec.describe Ability, type: :model do
     end
 
     it 'cannot manage the object Company' do
-      expec(ability).to_not be_able_to(:manage, Company)
+      expect(ability).to_not be_able_to(:manage, Company)
     end
   end
 end

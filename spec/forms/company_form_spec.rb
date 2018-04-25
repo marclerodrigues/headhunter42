@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CompanyForm, type: :form do
+RSpec.describe CompanyForm, type: :model do
   context 'validations' do
     subject { build(:company)}
 

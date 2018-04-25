@@ -1,6 +1,7 @@
 module Admin
     class CompaniesController < ::Admin::BaseController
-    before_action :set_company, only: [:edit, :update]
+    before_action :company, only: [:edit, :update]
+
 
     def update
       if @company.update_attributes(company_params)
@@ -15,12 +16,12 @@ module Admin
     def edit
     end
 
-    def set_company
-      @company = Company.first
+    def company
+      @company ||= Company.first
     end
 
     def company_params
-      params.require(:company).permit(:name, :website, :phone_numbers, :address, :logo)
+       params.require(:company).permit(:name, :website, :phone_number, :address, :logo)
     end
   end
 end
