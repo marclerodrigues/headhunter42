@@ -19,26 +19,25 @@ RSpec.describe Admin::CompaniesController, type: :controller do
       it 'will set flash[:notice]' do
         expect(flash[:notice]).to be_present
       end
-
     end
 
-      context 'when not successful' do
-        before do
-          put :update, params: { id: "", company: "" }
-        end
-
-        it 'does not update the company' do
-          expect(response).not_to change(comopany, :id)
-        end
-
-        it 'render the edit template' do
-          expect(response).to render_template(:edit)
-        end
-
-        it 'will set flash[:error]' do
-          expect(flash[:error]).to be_present
-        end
+    context 'when not successful' do
+      before do
+        put :update, params: { id: "", company: "" }
       end
+
+      it 'does not update the company' do
+        expect(response).not_to change(comopany, :id)
+      end
+
+      it 'render the edit template' do
+        expect(response).to render_template(:edit)
+      end
+
+      it 'will set flash[:error]' do
+        expect(flash[:error]).to be_present
+      end
+    end
   end
 
   describe 'GET#edit' do
