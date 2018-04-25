@@ -1,5 +1,7 @@
 
 pt-BR:
+  company_successfully_updated: "Empresa atualizada com sucesso!"
+  error_while_updating_the_company: "Houve um erro durante a atualização da empresa!"
   enumerize:
     user:
       role:
