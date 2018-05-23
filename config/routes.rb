@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'admin/dashboards#index'
+  root to: 'home#index'
+
+  # root to: 'admin/dashboards#index'
   devise_for :user, skip: :registrations
 
   namespace :admin do

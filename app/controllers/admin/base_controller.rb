@@ -1,5 +1,5 @@
 module Admin
-  class BaseController < ApplicationController
+  class BaseController < BaseAdminController
     before_action :allowed?
 
     def allowed?

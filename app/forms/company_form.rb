@@ -1,5 +1,6 @@
 class CompanyForm
   include ActiveModel::Model
+  extend Refile::Attachment
 
   def self.model_name
       ActiveModel::Name.new(self, nil, 'Company')
@@ -8,25 +9,27 @@ class CompanyForm
   attr_accessor(
       :name,
       :website,
-      :phone_numbers,
+      :phone_number,
       :address,
       :logo,
+      :logo_id,
       :company
   )
 
   validates :name, presence: true
   validates :website, presence: true
-  validates :phone_numbers, presence: true
+  validates :phone_number, presence: true
   validates :address, presence: true
   validates :logo, presence: true
 
+  attachment :logo, type: :image
 
   def update
-      if valid?
-        update_company
-      else
-          false
-      end
+    if valid?
+      update_company
+    else
+      false
+    end
   end
 
   private
