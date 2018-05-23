@@ -3,7 +3,7 @@ class CompanyForm
   extend Refile::Attachment
 
   def self.model_name
-      ActiveModel::Name.new(self, nil, 'Company')
+    ActiveModel::Name.new(self, nil, 'Company')
   end
 
   attr_accessor(
@@ -16,11 +16,7 @@ class CompanyForm
       :company
   )
 
-  validates :name, presence: true
-  validates :website, presence: true
-  validates :phone_number, presence: true
-  validates :address, presence: true
-  validates :logo, presence: true
+  validates :name, :website, :phone_number, :address, :logo, presence: true
 
   attachment :logo, type: :image
 
@@ -45,6 +41,6 @@ class CompanyForm
       phone_number: phone_number,
       address: address,
       logo: logo
-  }
+    }
   end
 end

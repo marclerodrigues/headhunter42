@@ -5,7 +5,7 @@ module Admin
       @company = CompanyForm.new(company_params.merge({ company: Company.first }))
 
       if @company.update
-        redirect_to admin_dashboards_path, notice: 'Company was successfully updated.'
+        redirect_to admin_dashboards_path, notice: t("messages.company_was_successfully_updated")
       else
         render :edit, flash: { error: t(:error_while_updating_the_company) }
       end
