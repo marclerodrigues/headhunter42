@@ -1,7 +1,5 @@
 
 en:
-  company_successfully_updated: "Company sucessfully updated!"
-  error_while_updating_the_company: "Error while updating the company!"
   enumerize:
     user:
       role:

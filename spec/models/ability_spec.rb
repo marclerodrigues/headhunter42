@@ -19,7 +19,7 @@ RSpec.describe Ability, type: :model do
     let(:reviewer) { build(:user, role: :reviewer) }
     let(:ability) { described_class.new(reviewer) }
 
-    it 'read all' do
+    it 'can read all' do
       expect(ability).to be_able_to(:read, :all)
     end
 

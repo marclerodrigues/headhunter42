@@ -23,6 +23,7 @@
 yarn-debug.log*
 .yarn-integrity
 .env
+config/database.yml
 
 
 /.idea

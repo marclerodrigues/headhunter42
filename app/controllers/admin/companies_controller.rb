@@ -1,8 +1,7 @@
 module Admin
   class CompaniesController < ::Admin::BaseController
-
     def update
-      @company = CompanyForm.new(company_params.merge({ company: Company.first }))
+      @company = CompanyForm.new(company_params)
 
       if @company.update
         redirect_to admin_dashboards_path, notice: t("messages.company_was_successfully_updated")
@@ -13,7 +12,6 @@ module Admin
 
     def edit
       @company = Company.first
-      #@company = CompanyForm.new
       @company_form = CompanyForm.new(name: @company.name,
                                       website: @company.website,
                                       phone_number: @company.phone_number,
@@ -24,13 +22,15 @@ module Admin
     private
 
     def company_params
-      params.require(:company).permit(
-                :name,
-                :website,
-                :phone_number,
-                :address,
-                :logo
-      )
+      params
+        .require(:company)
+        .permit(
+          :name,
+          :website,
+          :phone_number,
+          :address,
+          :logo)
+        .merge({ company: Company.first })
     end
   end
 end

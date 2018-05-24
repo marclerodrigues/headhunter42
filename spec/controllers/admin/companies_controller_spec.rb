@@ -4,7 +4,7 @@ RSpec.describe Admin::CompaniesController, type: :controller do
   describe 'PUT#update' do
     let(:company) { create(:company) }
     let(:user) { create(:user, role: :admin) }
-    before {sign_in user}
+    before { sign_in user }
 
     context 'when successful' do
       let(:company_attributes) { attributes_for(:company, logo: '123.png') }
@@ -17,8 +17,8 @@ RSpec.describe Admin::CompaniesController, type: :controller do
         expect(response).to be_redirect
       end
 
-      it 'will set flash[:notice]' do
-        expect(flash[:notice]).to match(/successfully updated/)
+      it 'sets the flash[:notice]' do
+        expect(flash[:notice]).to eq(I18n.t("messages.company_was_successfully_updated"))
       end
     end
 
@@ -28,14 +28,13 @@ RSpec.describe Admin::CompaniesController, type: :controller do
       it 'does not update the company' do
         expect {
            put :update, params: { id: company.id, company: company_attributes }
-        }.not_to change(company, :id)
+        }.not_to change { company.reload }
       end
 
-      it 'render the edit template' do
+      it 'renders the edit template' do
         put :update, params: { id: company.id, company: company_attributes }
         expect(response).to render_template(:edit)
       end
-
     end
   end
 

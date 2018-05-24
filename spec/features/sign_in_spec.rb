@@ -1,46 +1,43 @@
 require 'rails_helper'
 
 RSpec.describe "Sign_in", type: :feature, routes: true do
-  let(:user) { create(:user, role: :admin)}
-  let(:user1) { create(:user, role: :reviewer)}
-  let(:user2) { create(:user, role: :candidate) }
-
   before do
     create(:company)
   end
 
-  it 'Sign in as admin' do
-    visit('/user/sign_in')
+  context "when user is admin" do
+    let(:user) { create(:user, role: :admin)}
 
-    #binding.pry
-
-    fill_in('user_email', with: user.email)
-    fill_in('user_password', with: user.password)
-
-    click_button('Log in')
-
-    expect(current_path).to eq(admin_dashboards_path)
+    it 'Sign in as admin' do
+      visit_sign_in_and_fill_form
+      expect(current_path).to eq(admin_dashboards_path)
+    end
   end
 
-  it 'Sign in as reviewer' do
-    visit('/user/sign_in')
+  context "when user is reviewer" do
+    let(:user) { create(:user, role: :reviewer)}
 
-    fill_in('user_email', with: user1.email)
-    fill_in('user_password', with: user1.password)
-
-    click_button('Log in')
-
-    expect(current_path).to eq(reviewer_dashboards_path)
+    it 'Sign in as reviewer' do
+      visit_sign_in_and_fill_form
+      expect(current_path).to eq(reviewer_dashboards_path)
+    end
   end
 
-  it "Sign in as candidate" do
-    visit('/user/sign_in')
+  context "when user is candidate" do
+    let(:user) { create(:user, role: :candidate) }
 
-    fill_in('user_email', with: user2.email)
-    fill_in('user_password', with: user2.password)
+    it "Sign in as candidate" do
+      visit_sign_in_and_fill_form
+      expect(current_path).to eq(root_path)
+    end
+  end
 
-    click_button('Log in')
+  def visit_sign_in_and_fill_form
+   visit('/user/sign_in')
 
-    expect(current_path).to eq(root_path)
+   fill_in('user_email', with: user.email)
+   fill_in('user_password', with: user.password)
+
+   click_button('Log in')
   end
 end
