@@ -1,5 +1,7 @@
 
 pt-BR:
+  error_while_updating_the_company: "Houve um erro durante a atualização da empresa!"
+  edit_company: "Editar Compania"
   enumerize:
     user:
       role:

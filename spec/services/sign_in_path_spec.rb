@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe SignInPath, routes: true do
   describe'#path' do
-
     context 'when the user is admin' do
       let(:admin) { build(:user, role: :admin)}
       it 'returns the admin root path' do

@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      company:
+        one: Empresa
+        other: Empresas
+    attributes:
+      company:
+        name: Nome
+        website: Site
+        phone_number: Telefone
+        address: Endereço
+      user:
+        first_name: Primeiro Nome
+        last_name: Sobrenome

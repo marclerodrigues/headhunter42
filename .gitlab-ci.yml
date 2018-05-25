@@ -15,11 +15,13 @@ variables:
 
 before_script:
   - bundle install --without development production -j $(nproc) --path .ci_cache
+  - npm install -g yarn
+  - yarn install
   - cp .env.sample .env
   - cp config/database.yml.sample config/database.yml
   - bundle exec rake --trace db:setup
+  - yarn --install
 
 test:
   script:
     - bundle exec rspec
-
