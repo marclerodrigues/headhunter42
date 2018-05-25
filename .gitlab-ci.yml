@@ -20,7 +20,6 @@ before_script:
   - cp .env.sample .env
   - cp config/database.yml.sample config/database.yml
   - bundle exec rake --trace db:setup
-  - yarn --install
 
 test:
   script:
