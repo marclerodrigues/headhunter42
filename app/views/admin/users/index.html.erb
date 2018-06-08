@@ -1,0 +1,62 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title"><%= t("users") %></h3>
+
+    <div class="box-tools">
+      <div class="input-group input-group-sm" style="width: 300px;">
+        <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
+
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-default">
+            <i class="fa fa-search"></i>
+          </button>
+          <%= link_to new_admin_user_path, class: "btn btn-default", data: { turbolinks: "false" } do %>
+            <i class="fa fa-user-plus"></i> Novo Usuario
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- /.box-header -->
+  <div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.role %></td>
+          <td style="width: 50px">
+            <%= link_to admin_user_path(user), method: :delete, class: "btn btn-danger btn-circle", data: {confirm: t('messages.confirm_with', item: user.first_name )} do %>
+                <i class="fa fa-remove"></i>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="row">
+      <div class="col-sm-5">
+        <!-- <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div> -->
+      </div>
+      <div class="col-sm-7">
+        <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+          <ul class="pagination">
+            <li><%= paginate @users %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.box-body -->
+</div>

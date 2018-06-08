@@ -9,6 +9,7 @@
   </head>
   <!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
   <body class="hold-transition skin-red layout-boxed sidebar-mini">
+
   <!-- Site wrapper -->
   <div class="wrapper">
     <header class="main-header">
@@ -32,15 +33,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <!-- <h1>
-          Boxed Layout
-          <small>Blank example to the boxed layout</small>
-        </h1>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li><a href="#">Layout</a></li>
-          <li class="active">Boxed</li>
-        </ol> -->
+        <%= render 'components/alert' if flash.any? %>
         <%= yield :content_header %>
       </section>
 

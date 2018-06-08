@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'enumerize', '~> 2.2'
 gem 'devise', '~> 4.4.3'
+gem 'devise_invitable', '~> 1.7.0'
 gem 'cancancan', '~> 2.1'
 gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
@@ -37,7 +38,7 @@ gem 'refile-s3', '~> 0.2.0'
 gem 'simple_form', '~> 4.0'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'jquery-rails', '~> 4.3'
-
+gem 'kaminari', '~> 1.1.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -74,6 +75,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'mailcatcher'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

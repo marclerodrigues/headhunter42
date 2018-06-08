@@ -3,11 +3,16 @@ pt-BR:
   error_while_updating_the_company: "Houve um erro durante a atualização da empresa!"
   sign_in_to_start_your_session: "Insira seus dados para começar"
   edit_company: "Editar Compania"
+  create_user: "Novo Usuário"
+  create: "Criar"
   log_out: "Sair"
   password: "Senha"
+  first_name: "Nome"
+  last_name: "Sobrenome"
+  users: "Usuários"
   enumerize:
     user:
       role:
-        admin: "Admin"
-        reviewer: "Revisor"
+        admin: "Administrador"
+        reviewer: "Avaliador"
         candidate: "Candidato"

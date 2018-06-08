@@ -3,7 +3,7 @@
   <div class="register-box-body">
     <p class="login-box-msg"><%= t("edit_company") %></p>
 
-    <%=form_for @company_form, url: admin_company_path, method: "put" do |f|%>
+    <%= form_for @company_form, url: admin_company_path, method: "put" do |f| %>
       <div class="form-group has-feedback">
         <%= f.text_field :name, class:"form-control", placeholder: t("placeholder.company_name") %>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>

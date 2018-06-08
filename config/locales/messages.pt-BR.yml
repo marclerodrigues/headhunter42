@@ -1,3 +1,7 @@
 pt-BR:
   messages:
+    confirm: Tem certeza?
+    confirm_with: Você deseja realmente excluir %{item} ?
     company_was_successfully_updated: Dados da empresa atualizados com sucesso!
+    destroyed_with: "%{item} foi excluído com sucesso!"
+    destroyed: Item excluído com sucesso!
