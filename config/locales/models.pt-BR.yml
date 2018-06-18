@@ -11,5 +11,6 @@ pt-BR:
         phone_number: Telefone
         address: Endereço
       user:
-        first_name: Primeiro Nome
+        first_name: Nome
         last_name: Sobrenome
+        role: Função

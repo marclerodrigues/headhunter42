@@ -24,9 +24,9 @@
     </form>
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
-    <ul class="sidebar-menu" data-widget="tree">
+    <ul class="sidebar-menu" data-widget="tree" data-turbolinks="false">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="treeview">
+      <li>
         <%= link_to admin_dashboards_path do %>
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         <% end %>
@@ -34,6 +34,11 @@
       <li>
         <%= link_to edit_admin_company_path(current_company) do %>
           <i class="fa fa-book"></i><span><%= t("edit_company") %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_users_path do %>
+          <i class="fa fa-users"></i><span><%= t("users") %></span>
         <% end %>
       </li>
     </ul>

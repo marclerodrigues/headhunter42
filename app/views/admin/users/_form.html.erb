@@ -1,0 +1,49 @@
+<div class="box box-warning">
+  <div class="box-header with-border">
+    <h3 class="box-title"><%= t("create_user") %></h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <!-- <form role="form"> -->
+    <%= form_for @user, url: admin_users_path, method: "post" do |f| %>
+    <!-- text input -->
+      <div class="row">
+        <div class="form-group col-md-6">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class:"form-control", placeholder: t("placeholder.user_name") %>
+        </div>
+
+        <div class="form-group col-md-6">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class:"form-control", placeholder: t("placeholder.user_last_name") %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label>Email</label>
+          <%= f.text_field :email, class:"form-control", placeholder: "Email" %>
+        </div>
+
+        <!-- select -->
+        <div class="form-group col-md-6">
+          <%= f.label :role %>
+           <%= f.select :role, User.role.options, {}, class: "form-control" %>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-md-9">
+      </div>
+      <div class="col-md-3">
+        <%= f.button class:"btn btn-primary btn-block btn-flat" do %>
+          <%= t("create") %>
+        <% end %>
+      </div>
+    </div>
+
+    <% end %>
+<!-- </form> -->
+  </div>
+<!-- /.box-body -->
+</div>

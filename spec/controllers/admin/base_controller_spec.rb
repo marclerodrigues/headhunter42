@@ -7,11 +7,11 @@ RSpec.describe Admin::BaseController, type: :controller do
     end
   end
 
-  context 'when admin' do
+  context "when admin" do
     let(:user) { create(:user, role: :admin) }
     before { sign_in user }
 
-    it 'returns the correct response' do
+    it "returns the correct response" do
       get :index
       expect(response).to be_successful
     end
