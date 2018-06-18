@@ -13,11 +13,11 @@ module Admin
 
     def create
       @user = UserCreator.create(
-        { first_name: user_params[:first_name],
-          last_name: user_params[:last_name],
-          email: user_params[:email],
-          role: user_params[:role]
-        })
+        first_name: user_params[:first_name],
+        last_name: user_params[:last_name],
+        email: user_params[:email],
+        role: user_params[:role]
+      )
 
       if @user.persisted?
         flash[:notice] = t('messages.user_created')
@@ -29,9 +29,8 @@ module Admin
     end
 
     def destroy
-      user_name = @user.first_name
       @user.destroy
-      redirect_to admin_users_path, notice: t('messages.destroyed_with', item: user_name)
+      redirect_to admin_users_path, notice: t('messages.destroyed_with')
     end
 
     private

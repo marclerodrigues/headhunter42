@@ -9,5 +9,4 @@ class UserCreator
     end
     @user
   end
-
 end
