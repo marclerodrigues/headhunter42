@@ -11,7 +11,7 @@
             <i class="fa fa-search"></i>
           </button>
           <%= link_to new_admin_user_path, class: "btn btn-default", data: { turbolinks: "false" } do %>
-            <i class="fa fa-user-plus"></i> Novo Usuario
+            <i class="fa fa-user-plus"></i> <%= t('create_user') %>
           <% end %>
         </div>
       </div>
@@ -24,9 +24,9 @@
       <tbody>
         <tr>
           <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
+          <th><%= @users.model.human_attribute_name('first_name') %></th>
+          <th><%= @users.model.human_attribute_name('email') %></th>
+          <th><%= @users.model.human_attribute_name('role') %></th>
         </tr>
         <% @users.each do |user| %>
         <tr>
@@ -46,7 +46,6 @@
 
     <div class="row">
       <div class="col-sm-5">
-        <!-- <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div> -->
       </div>
       <div class="col-sm-7">
         <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">

@@ -8,7 +8,7 @@ RSpec.describe "Sign_in", type: :feature, routes: true do
   context "when user is admin" do
     let(:user) { create(:user, role: :admin)}
 
-    it 'Sign in as admin' do
+    it "Sign in as admin" do
       visit_sign_in_and_fill_form
       expect(current_path).to eq(admin_dashboards_path)
     end
@@ -17,7 +17,7 @@ RSpec.describe "Sign_in", type: :feature, routes: true do
   context "when user is reviewer" do
     let(:user) { create(:user, role: :reviewer)}
 
-    it 'Sign in as reviewer' do
+    it "Sign in as reviewer" do
       visit_sign_in_and_fill_form
       expect(current_path).to eq(reviewer_dashboards_path)
     end

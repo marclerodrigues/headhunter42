@@ -1,6 +1,0 @@
-pt-BR:
-  devise:
-    invitations:
-      edit:
-        header: "Cadastre sua senha"
-        submit_button: "Cadastrar"

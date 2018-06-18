@@ -1,8 +1,10 @@
 module Admin
   class UsersController < ::Admin::BaseController
+    before_action :set_user, only: :destroy
+    load_and_authorize_resource
 
     def index
-      @users = User.admins_and_reviewers.order(id: :desc).page(params[:page])
+      @users = User.admins_and_reviewers.page(params[:page])
     end
 
     def new
@@ -10,23 +12,24 @@ module Admin
     end
 
     def create
-      @user = User.new(user_params)
-      @user.skip_password_validation = true
-      if @user.save
-        @user.invite!
-        flash[:notice] = "Usuario criado com sucesso"
+      @user = UserCreator.create(
+        { first_name: user_params[:first_name],
+          last_name: user_params[:last_name],
+          email: user_params[:email],
+          role: user_params[:role]
+        })
+
+      if @user.persisted?
+        flash[:notice] = t('messages.user_created')
         redirect_to admin_dashboards_path
       else
-        flash[:alert] = "Teve um erro ao criar o usuario"
+        flash[:alert] = t('messages.user_could_not_be_created')
         render :new, status: :unprocessable_entity
       end
     end
 
     def destroy
-      @user = User.find(params[:id])
       user_name = @user.first_name
-      authorize! :destroy, @user
-
       @user.destroy
       redirect_to admin_users_path, notice: t('messages.destroyed_with', item: user_name)
     end
@@ -37,6 +40,10 @@ module Admin
       params.require(:user).permit(
         :email, :first_name, :last_name, :role
       )
+    end
+
+    def set_user
+      @user = User.find(params[:id])
     end
   end
 end

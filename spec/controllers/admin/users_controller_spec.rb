@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Admin::UsersController, type: :controller do
-  describe 'GET#index' do
-    let(:user) { create(:user, role: :admin) }
+  let(:user) { create(:user, role: :admin) }
+  before { sign_in(user) }
+
+  describe "GET#index" do
     before do
-      sign_in user
       get :index
     end
 
@@ -17,10 +18,8 @@ RSpec.describe Admin::UsersController, type: :controller do
     end
   end
 
-  describe 'GET#new' do
-    let(:user) { create(:user, role: :admin) }
+  describe "GET#new" do
     before do
-      sign_in user
       get :new
     end
 
@@ -34,9 +33,6 @@ RSpec.describe Admin::UsersController, type: :controller do
   end
 
   describe "POST#create" do
-    let(:user) { create(:user, role: :admin) }
-    before { sign_in user }
-
     context "with valid attributes" do
       let(:valid_attributes) do
         {
@@ -46,10 +42,15 @@ RSpec.describe Admin::UsersController, type: :controller do
         }
       end
 
-      it 'creates a new user' do
+      it "creates a new user" do
         expect {
           post :create, params: { user: valid_attributes }
         }.to change(User, :count).by(1)
+      end
+
+      it "redirect to correct path" do
+        post :create, params: { user: valid_attributes }
+        expect(response).to be_redirect
       end
     end
 
@@ -61,17 +62,20 @@ RSpec.describe Admin::UsersController, type: :controller do
         }
       end
 
-      it "does not creates a new user" do
+      it "does not create a new user" do
         expect {
           post :create, params: { user: invalid_attributes }
         }.not_to change(User, :count)
+      end
+
+      it "renders the new template" do
+        post :create, params: { user: invalid_attributes }
+        expect(response).to render_template(:new)
       end
     end
   end
 
   describe "DELETE#destroy" do
-    let(:user) { create(:user, role: :admin) }
-    before { sign_in user }
     let!(:user_2) { create(:user, role: :reviewer) }
 
     it "deletes an user" do
