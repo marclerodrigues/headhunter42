@@ -20,7 +20,7 @@ module Admin
 
       if @pipeline.save
         flash[:notice] = t('messages.pipeline_created')
-        redirect_to admin_pipelines_path
+        redirect_to admin_pipeline_path(@pipeline)
       else
         flash[:alert] = @pipeline.errors.full_messages
         render :new, status: :unprocessable_entity
@@ -33,7 +33,7 @@ module Admin
     def update
       if @pipeline.update_attributes(pipeline_params)
         flash[:notice] = t('messages.pipeline_updated')
-        redirect_to admin_pipelines_path
+        redirect_to admin_pipeline_path(@pipeline)
       else
         flash[:alert] = @pipeline.errors.full_messages
         render :edit

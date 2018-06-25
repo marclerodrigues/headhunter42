@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Pipeline", type: :feature do
-  let(:user) { create(:user, role: :admin) }
-  let!(:pipeline) {create(:pipeline) }
+  let!(:user) { create(:user, role: :admin) }
+  let!(:pipeline) { create(:pipeline) }
   let!(:step1) { create(:step, pipeline: pipeline, order: 1) }
   let!(:step2) { create(:step, pipeline: pipeline, order: 2) }
 

@@ -57,7 +57,7 @@ RSpec.describe Admin::PipelinesController, type: :controller do
         }.to change(Pipeline, :count).by(1)
       end
 
-      it "redirect to correct path" do
+      it "redirects to correct path" do
         post :create, params: { pipeline: valid_attributes }
         expect(response).to be_redirect
       end
@@ -135,6 +135,12 @@ RSpec.describe Admin::PipelinesController, type: :controller do
       }.to change {
         Pipeline.count
       }.by(-1)
+    end
+
+    it "redirects to correct path" do
+      delete :destroy, params: { id: pipeline.id }
+
+      expect(response).to be_redirect
     end
   end
 end
