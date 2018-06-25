@@ -5,4 +5,7 @@ pt-BR:
     phone: Telefone
     address: Endereço
     user_name: Nome
+    pipeline_name: Nome do Cargo
     user_last_name: Sobrenome
+    step_name: Nome da Etapa
+    step_description: Descrição

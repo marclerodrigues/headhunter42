@@ -41,7 +41,7 @@ RSpec.describe Admin::CompaniesController, type: :controller do
   describe "GET#edit" do
     let(:company) { create(:company) }
     let(:user) { create(:user, role: :admin) }
-    before {sign_in user}
+    before { sign_in user }
 
     before do
       get :edit, params: { id: company.id }

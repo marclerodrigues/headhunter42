@@ -23,7 +23,7 @@ module Admin
         flash[:notice] = t('messages.user_created')
         redirect_to admin_dashboards_path
       else
-        flash[:alert] = t('messages.user_could_not_be_created')
+        flash[:alert] = @user.errors.full_messages
         render :new, status: :unprocessable_entity
       end
     end

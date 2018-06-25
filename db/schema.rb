@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180606182445) do
+ActiveRecord::Schema.define(version: 20180625165238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(version: 20180606182445) do
     t.string "logo_filename"
     t.string "logo_content_size"
     t.string "logo_content_type"
+  end
+
+  create_table "pipelines", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "steps", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "pipeline_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "order"
+    t.index ["pipeline_id"], name: "index_steps_on_pipeline_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +79,5 @@ ActiveRecord::Schema.define(version: 20180606182445) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "steps", "pipelines"
 end

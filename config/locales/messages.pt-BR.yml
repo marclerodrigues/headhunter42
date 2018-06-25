@@ -1,9 +1,15 @@
 pt-BR:
   messages:
     confirm: Tem certeza?
-    confirm_with: Você deseja realmente excluir %{item} ?
+    confirm_with: Você deseja realmente excluir?
     user_created: Usuário criado com sucesso
-    user_could_not_be_created: Dados inválidos
+    could_not_be_created: Dados inválidos
+    could_not_be_created: Dados inválidos
+    pipeline_created: Cargo criado com sucesso!
+    pipeline_updated: Cargo atualizado com sucesso!
+    step_updated: Etapa atualizada com sucesso!
     company_was_successfully_updated: Dados da empresa atualizados com sucesso!
     destroyed_with: "Excluído com sucesso!"
     destroyed: Item excluído com sucesso!
+    edit: Editar %{model}
+    new: Criar %{model}

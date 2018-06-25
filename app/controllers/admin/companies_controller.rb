@@ -1,12 +1,15 @@
 module Admin
   class CompaniesController < ::Admin::BaseController
+    load_and_authorize_resource
+
     def update
       @company = CompanyForm.new(company_params)
 
       if @company.update
         redirect_to admin_dashboards_path, notice: t("messages.company_was_successfully_updated")
       else
-        render :edit, flash: { error: t(:error_while_updating_the_company) }
+        flash[:alert] = @company.errors.full_messages
+        render :edit
       end
     end
 
