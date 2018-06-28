@@ -1,0 +1,45 @@
+<div class="box box-warning">
+  <div class="box-header with-border">
+    <h3 class="box-title"><%= action_message %></h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <!-- <form role="form"> -->
+    <%= form_for [:admin, @pipeline] do |f| %>
+    <!-- text input -->
+      <div class="row">
+        <div class="form-group col-md-6">
+          <%= f.label :name %>
+          <%= f.text_field :name, class:"form-control", placeholder: t("placeholder.pipeline_name") %>
+        </div>
+      </div>
+
+      <h2><%= t('steps') %></h2>
+
+      <div class="box-body">
+        <div id='steps'>
+          <%= f.fields_for :steps do |step| %>
+            <%= render 'admin/pipelines/step_fields', f: step %>
+          <% end %>
+
+          <div class="links col-md-3">
+            <%= link_to_add_association t('create_step'), f, :steps, class: "btn btn-info btn-block btn-flat" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+        </div>
+        <div class="col-md-3">
+          <%= f.button class:"btn btn-primary btn-block btn-flat" do %>
+            <%= t('save') %>
+          <% end %>
+        </div>
+      </div>
+
+    <% end %>
+<!-- </form> -->
+  </div>
+<!-- /.box-body -->
+</div>

@@ -4,6 +4,12 @@ pt-BR:
       company:
         one: Empresa
         other: Empresas
+      pipeline:
+        one: Cargo
+        other: Cargos
+      step:
+        one: Etapa
+        other: Etapas
     attributes:
       company:
         name: Nome
@@ -14,3 +20,9 @@ pt-BR:
         first_name: Nome
         last_name: Sobrenome
         role: Função
+      pipeline:
+        name: Nome
+      step:
+        name: Nome
+        order: Ordem
+        description: Descrição
