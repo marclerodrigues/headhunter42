@@ -10,5 +10,6 @@ RSpec.describe Step, type: :model do
 
   describe "relations" do
     it { is_expected.to belong_to(:pipeline) }
+    it { is_expected.to have_many(:skills) }
   end
 end

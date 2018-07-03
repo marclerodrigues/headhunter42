@@ -60,5 +60,11 @@ RSpec.describe Admin::SkillsController, type: :controller do
         delete :destroy, params: { id: skill.id }
       }.to change(Skill, :count).by(-1)
     end
+
+    it "redirects to pipelines path" do
+      delete :destroy, params: { id: skill.id }
+
+      expect(response).to be_redirect
+    end
   end
 end
