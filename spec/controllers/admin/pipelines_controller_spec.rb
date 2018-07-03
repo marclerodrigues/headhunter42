@@ -57,9 +57,14 @@ RSpec.describe Admin::PipelinesController, type: :controller do
         }.to change(Pipeline, :count).by(1)
       end
 
-      it "redirects to correct path" do
+      it "returns a redirect response" do
         post :create, params: { pipeline: valid_attributes }
         expect(response).to be_redirect
+      end
+
+      it "redirects correctly" do
+        post :create, params: { pipeline: valid_attributes }
+        expect(response).to redirect_to(admin_pipeline_path(Pipeline.last))
       end
     end
 
@@ -105,8 +110,12 @@ RSpec.describe Admin::PipelinesController, type: :controller do
         put :update, params: { id: pipeline.id, pipeline: pipeline_attributes }
       end
 
-      it "redirects to pipeline" do
+      it "returns a redirect response" do
         expect(response).to be_redirect
+      end
+
+      it "redirects correctly" do
+        expect(response).to redirect_to(admin_pipeline_path(pipeline))
       end
     end
 
@@ -137,10 +146,14 @@ RSpec.describe Admin::PipelinesController, type: :controller do
       }.by(-1)
     end
 
-    it "redirects to correct path" do
+    it "returns a redirect response" do
       delete :destroy, params: { id: pipeline.id }
-
       expect(response).to be_redirect
+    end
+
+    it "redirects correctly" do
+      delete :destroy, params: { id: pipeline.id }
+      expect(response).to redirect_to(admin_pipelines_path)
     end
   end
 end

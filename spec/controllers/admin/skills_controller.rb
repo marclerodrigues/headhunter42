@@ -30,8 +30,12 @@ RSpec.describe Admin::SkillsController, type: :controller do
         put :update, params: { id: skill.id, skill: skill_attributes }
       end
 
-      it "redirects to pipelines path" do
+      it "returns a redirect response" do
         expect(response).to be_redirect
+      end
+
+      it "redirects correctly" do
+        expect(response).to redirect_to(admin_pipelines_path)
       end
     end
 
@@ -61,10 +65,13 @@ RSpec.describe Admin::SkillsController, type: :controller do
       }.to change(Skill, :count).by(-1)
     end
 
-    it "redirects to pipelines path" do
+    it "returns a redirect response" do
       delete :destroy, params: { id: skill.id }
-
       expect(response).to be_redirect
+    end
+
+    it "redirects correctly" do
+      expect(response).to redirect_to(admin_pipelines_path)
     end
   end
 end

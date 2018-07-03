@@ -30,8 +30,12 @@ RSpec.describe Admin::StepsController, type: :controller do
         put :update, params: { id: step.id, step: step_attributes }
       end
 
-      it "redirects to pipelines path" do
+      it "returns a redirect response" do
         expect(response).to be_redirect
+      end
+
+      it "redirects correctly" do
+        expect(response).to redirect_to(admin_pipelines_path)
       end
     end
 
@@ -58,6 +62,16 @@ RSpec.describe Admin::StepsController, type: :controller do
       expect {
         delete :destroy, params: { id: step.id }
       }.to change(Step, :count).by(-1)
+    end
+
+    it "returns a redirect response" do
+      delete :destroy, params: { id: step.id }
+      expect(response).to be_redirect
+    end
+
+    it "redirects correctly" do
+      delete :destroy, params: { id: step.id }
+      expect(response).to redirect_to(admin_pipelines_path)
     end
   end
 end

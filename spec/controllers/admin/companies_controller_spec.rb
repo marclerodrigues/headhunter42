@@ -13,8 +13,12 @@ RSpec.describe Admin::CompaniesController, type: :controller do
         put :update, params: { id: company.id, company: company_attributes }
       end
 
-      it "redirects to root_path" do
+      it "returns a redirect response" do
         expect(response).to be_redirect
+      end
+
+      it "redirects correctly" do
+        expect(response).to redirect_to(admin_dashboards_path)
       end
 
       it "sets the flash[:notice]" do
