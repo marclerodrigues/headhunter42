@@ -48,9 +48,14 @@ RSpec.describe Admin::UsersController, type: :controller do
         }.to change(User, :count).by(1)
       end
 
-      it "redirect to correct path" do
+      it "returns a redirect response" do
         post :create, params: { user: valid_attributes }
         expect(response).to be_redirect
+      end
+
+      it "redirects correctly" do
+        post :create, params: { user: valid_attributes }
+        expect(response).to redirect_to(admin_dashboards_path)
       end
     end
 
@@ -84,6 +89,16 @@ RSpec.describe Admin::UsersController, type: :controller do
       }.to change {
         User.count
       }.by(-1)
+    end
+
+    it "returns a redirect response" do
+      delete :destroy, params: { id: user_2.id }
+      expect(response).to be_redirect
+    end
+
+    it "redirects correctly" do
+      delete :destroy, params: { id: user_2.id }
+      expect(response).to redirect_to(admin_users_path)
     end
   end
 end

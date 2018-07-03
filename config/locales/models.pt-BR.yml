@@ -10,6 +10,9 @@ pt-BR:
       step:
         one: Etapa
         other: Etapas
+      skill:
+        one: Habilidade
+        other: Habilidades
     attributes:
       company:
         name: Nome
@@ -25,4 +28,7 @@ pt-BR:
       step:
         name: Nome
         order: Ordem
+        description: Descrição
+      skill:
+        name: Nome
         description: Descrição

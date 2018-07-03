@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Admin::StepsController, type: :controller do
+RSpec.describe Admin::SkillsController, type: :controller do
   let(:user) { create(:user, role: :admin) }
   before { sign_in(user) }
 
   describe "GET#edit" do
-    let(:step) { create(:step) }
+    let(:skill) { create(:skill) }
 
     before do
-      get :edit, params: { id: step.id }
+      get :edit, params: { id: skill.id }
     end
 
     it "works correctly" do
@@ -21,13 +21,13 @@ RSpec.describe Admin::StepsController, type: :controller do
   end
 
   describe "PUT#update" do
-    let(:step) { create(:step) }
+    let(:skill) { create(:skill) }
 
     context "when successful" do
-      let(:step_attributes) { attributes_for(:step) }
+      let(:skill_attributes) { attributes_for(:skill) }
 
       before do
-        put :update, params: { id: step.id, step: step_attributes }
+        put :update, params: { id: skill.id, skill: skill_attributes }
       end
 
       it "returns a redirect response" do
@@ -40,37 +40,37 @@ RSpec.describe Admin::StepsController, type: :controller do
     end
 
     context "when not successful" do
-      let(:step_attributes) { attributes_for(:step, name: "") }
+      let(:skill_attributes) { attributes_for(:skill, name: "") }
 
-      it "does not update the step" do
+      it "does not updates the step" do
         expect {
-           put :update, params: { id: step.id, step: step_attributes }
-        }.not_to change { step.reload }
+          put :update, params: { id: skill.id, skill: skill_attributes }
+        }.not_to change { skill.reload }
       end
 
       it "renders the edit template" do
-        put :update, params: { id: step.id, step: step_attributes }
+        put :update, params: { id: skill.id, skill: skill_attributes }
+
         expect(response).to render_template(:edit)
       end
     end
   end
 
   describe "DELETE#destroy" do
-    let!(:step) { create(:step) }
+    let!(:skill) { create(:skill) }
 
     it "deletes a step" do
       expect {
-        delete :destroy, params: { id: step.id }
-      }.to change(Step, :count).by(-1)
+        delete :destroy, params: { id: skill.id }
+      }.to change(Skill, :count).by(-1)
     end
 
     it "returns a redirect response" do
-      delete :destroy, params: { id: step.id }
+      delete :destroy, params: { id: skill.id }
       expect(response).to be_redirect
     end
 
     it "redirects correctly" do
-      delete :destroy, params: { id: step.id }
       expect(response).to redirect_to(admin_pipelines_path)
     end
   end

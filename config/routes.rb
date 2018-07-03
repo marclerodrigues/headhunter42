@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :pipelines
     resources :steps, except: [:index]
+    resources :skills, except: [:index]
     resources :dashboards, only: :index
     resources :companies, only: [:edit, :update]
     resources :users, except: [:show, :edit]

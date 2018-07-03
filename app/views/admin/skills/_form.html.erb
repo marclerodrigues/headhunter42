@@ -1,0 +1,38 @@
+<div class="box box-warning">
+  <div class="box-header with-border">
+    <h3 class="box-title"><%= action_message %></h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <!-- <form role="form"> -->
+    <%= form_for [:admin, @skill] do |f| %>
+    <!-- text input -->
+      <div class="row">
+        <div class="form-group col-md-6">
+          <%= f.label :name %>
+          <%= f.text_field :name, class:"form-control", placeholder: t("placeholder.skill_name") %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <%= f.label :description %>
+          <%= f.text_area :description, class:"form-control", placeholder: t("placeholder.skill_description") %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+        </div>
+        <div class="col-md-3">
+          <%= f.button class:"btn btn-primary btn-block btn-flat" do %>
+            <%= t("save") %>
+          <% end %>
+        </div>
+      </div>
+
+    <% end %>
+<!-- </form> -->
+  </div>
+<!-- /.box-body -->
+</div>
