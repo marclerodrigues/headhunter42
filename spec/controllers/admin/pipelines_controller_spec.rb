@@ -105,7 +105,7 @@ RSpec.describe Admin::PipelinesController, type: :controller do
         put :update, params: { id: pipeline.id, pipeline: pipeline_attributes }
       end
 
-      it "redirects to admin dashboard" do
+      it "redirects to pipeline" do
         expect(response).to be_redirect
       end
     end

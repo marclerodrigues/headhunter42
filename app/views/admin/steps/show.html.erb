@@ -1,6 +1,6 @@
 <div class="box">
   <div class="box-header">
-    <h3 class="box-title"><strong><%= t("pipeline") %></strong>: <%= @pipeline.name %></h3>
+    <h3 class="box-title"><strong><%= t("step") %></strong>: <%= @step.name %></h3>
 
     <div class="box-tools">
       <div class="input-group input-group-sm" style="width: 200px;">
@@ -19,23 +19,21 @@
     <table class="table table-hover">
       <tbody>
         <tr>
-          <th><%= t('order') %></th>
           <th><%= t('name') %></th>
           <th><%= t('description') %></th>
         </tr>
-        <% @steps.each do |step| %>
+        <% @skills.each do |skill| %>
         <tr>
-          <td><%= step.order %></td>
-          <td><%= step.name %></td>
-          <td><%= step.description %></td>
+          <td><%= skill.name %></td>
+          <td><%= skill.description %></td>
           <td style="width: 150px">
-            <%= link_to admin_step_path(step), method: :get, class: "btn btn-primary btn-circle" do %>
+            <%= link_to admin_skill_path(skill), method: :get, class: "btn btn-primary btn-circle" do %>
                 <i class="fa fa-eye"></i>
             <% end %>
-            <%= link_to edit_admin_step_path(step), method: :get, class: "btn btn-success btn-circle" do %>
+            <%= link_to edit_admin_skill_path(skill), method: :get, class: "btn btn-success btn-circle" do %>
               <i class="fa fa-edit"></i>
             <% end %>
-            <%= link_to admin_step_path(step), method: :delete, class: "btn btn-danger btn-circle", data: {confirm: t("messages.confirm_with")} do %>
+            <%= link_to admin_skill_path(skill), method: :delete, class: "btn btn-danger btn-circle", data: {confirm: t("messages.confirm_with")} do %>
                 <i class="fa fa-remove"></i>
             <% end %>
           </td>

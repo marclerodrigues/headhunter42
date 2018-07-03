@@ -1,14 +1,18 @@
 module Admin
   class StepsController < ::Admin::BaseController
-    before_action :set_step, only: [:edit, :update, :destroy]
+    before_action :set_step
     load_and_authorize_resource
+
+    def show
+      @skills = @step.skills
+    end
 
     def edit
     end
 
     def update
       if @step.update(step_params)
-        redirect_to admin_dashboards_path, notice: t('messages.step_updated')
+        redirect_to admin_pipelines_path, notice: t('messages.step_updated')
       else
         flash[:alert] = @step.errors.full_messages
         render :edit
@@ -27,7 +31,9 @@ module Admin
     end
 
     def step_params
-      params.require(:step).permit(:name, :description, :order, :pipeline_id)
+      params.require(:step).permit(:name, :description, :order, :pipeline_id,
+        skills_attributes: [:id, :name, :description, :_destroy]
+      )
     end
   end
 end

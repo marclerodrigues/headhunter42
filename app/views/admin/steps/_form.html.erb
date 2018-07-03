@@ -25,6 +25,20 @@
         </div>
       </div>
 
+      <h2><%= t('skills') %></h2>
+
+      <div class="box-body">
+        <div id='skills'>
+          <%= f.fields_for :skills do |skill| %>
+            <%= render 'admin/steps/skill_fields', f: skill %>
+          <% end %>
+
+          <div class="links col-md-3">
+            <%= link_to_add_association t('create_skil'), f, :skills, class: "btn btn-info btn-block btn-flat" %>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-9">
         </div>

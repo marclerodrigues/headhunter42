@@ -4,8 +4,10 @@ pt-BR:
   edit_company: "Editar Compania"
   create_user: "Novo Usuário"
   create_pipeline: "Novo Cargo"
-  create_step: "Nova etapa"
-  remove_step: "Remover etapa"
+  create_step: "Nova Etapa"
+  remove_step: "Remover Etapa"
+  create_skill: "Nova Habilidade"
+  remove_skill: "Remover Habilidade"
   create: "Criar"
   save: "Salvar"
   log_out: "Sair"
@@ -14,7 +16,14 @@ pt-BR:
   last_name: "Sobrenome"
   users: "Usuários"
   pipelines: "Cargos"
+  pipeline: "Cargo"
+  step: "Etapa"
   steps: "Etapas"
+  skill: "Habilidade"
+  skills: "Habilidades"
+  name: "Nome"
+  description: "Descrição"
+  order: "Ordem"
   enumerize:
     user:
       role:

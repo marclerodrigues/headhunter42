@@ -1,0 +1,22 @@
+<div class='nested-fields'>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label :name %>
+      <%= f.text_field :name, class:"form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-12">
+      <%= f.label :description %>
+      <%= f.text_area :description, class:"form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <%= link_to_remove_association t('remove_skill'), f, class: "btn btn-danger btn-block btn-flat" %>
+    </div>
+  </div>
+  <br>
+</div>

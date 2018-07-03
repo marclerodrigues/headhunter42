@@ -9,3 +9,5 @@ pt-BR:
     user_last_name: Sobrenome
     step_name: Nome da Etapa
     step_description: Descrição
+    skill_name: Nome da Habilidade
+    skill_description: Descrição
