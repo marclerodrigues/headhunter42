@@ -33,17 +33,22 @@
       </li>
       <li>
         <%= link_to edit_admin_company_path(current_company) do %>
-          <i class="fa fa-book"></i><span><%= t("edit_company") %></span>
+          <i class="fa fa-book"></i> <span><%= t("edit_company") %></span>
         <% end %>
       </li>
       <li>
         <%= link_to admin_users_path do %>
-          <i class="fa fa-users"></i><span><%= t("users") %></span>
+          <i class="fa fa-users"></i> <span><%= t("users") %></span>
         <% end %>
       </li>
       <li>
         <%= link_to admin_pipelines_path do %>
-          <i class="fa fa-cubes"></i><span><%= t("pipelines") %></span>
+          <i class="fa fa-cubes"></i> <span><%= t("pipelines") %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_vacancies_path do %>
+          <i class="fa fa-hand-stop-o"></i> <span><%= t("vacancies") %></span>
         <% end %>
       </li>
     </ul>

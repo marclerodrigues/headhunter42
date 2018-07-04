@@ -9,6 +9,8 @@ pt-BR:
     pipeline_updated: Cargo atualizado com sucesso!
     step_updated: Etapa atualizada com sucesso!
     skill_updated: Habilidade atualizada com sucesso!
+    vacancy_created: Vaga criada com sucesso!
+    vacancy_updated: Vaga atualizada com sucesso!
     company_was_successfully_updated: Dados da empresa atualizados com sucesso!
     destroyed_with: "Excluído com sucesso!"
     destroyed: Item excluído com sucesso!

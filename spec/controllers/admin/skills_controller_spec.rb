@@ -71,6 +71,7 @@ RSpec.describe Admin::SkillsController, type: :controller do
     end
 
     it "redirects correctly" do
+      delete :destroy, params: { id: skill.id }
       expect(response).to redirect_to(admin_pipelines_path)
     end
   end
