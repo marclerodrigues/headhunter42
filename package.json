@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "^3.4.1",
     "admin-lte": "^2.4.3",
+    "datepicker": "^0.0.0",
     "font-awesome": "^4.7.0",
     "ionicons": "^3.0.0"
   },

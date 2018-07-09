@@ -5,6 +5,7 @@ pt-BR:
   create_user: "Novo Usuário"
   create_pipeline: "Novo Cargo"
   create_step: "Nova Etapa"
+  create_vacancy: "Nova Vaga"
   remove_step: "Remover Etapa"
   create_skill: "Nova Habilidade"
   remove_skill: "Remover Habilidade"
@@ -17,6 +18,8 @@ pt-BR:
   users: "Usuários"
   pipelines: "Cargos"
   pipeline: "Cargo"
+  vacancies: "Vagas"
+  vacancy: "Vaga"
   step: "Etapa"
   steps: "Etapas"
   skill: "Habilidade"
@@ -24,6 +27,12 @@ pt-BR:
   name: "Nome"
   description: "Descrição"
   order: "Ordem"
+  active: "Ativo"
+  perks: "Benefícios"
+  min_salary: Salario inicial
+  max_salary: Salario final
+  start_date: Data inicial
+  end_date: Data final
   enumerize:
     user:
       role:

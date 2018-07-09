@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :pipelines
+    resources :vacancies
     resources :steps, except: [:index]
     resources :skills, except: [:index]
     resources :dashboards, only: :index

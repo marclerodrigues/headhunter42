@@ -7,6 +7,9 @@ pt-BR:
       pipeline:
         one: Cargo
         other: Cargos
+      vacancy:
+        one: Vaga
+        other: Vagas
       step:
         one: Etapa
         other: Etapas
@@ -25,6 +28,17 @@ pt-BR:
         role: Função
       pipeline:
         name: Nome
+      vacancy:
+        name: Nome
+        pipeline: Cargo
+        pipeline_id: Cargo
+        description: Descrição
+        perks: Benefícios
+        active: Ativo
+        min_salary: Salario inicial
+        max_salary: Salario final
+        start_date: Data inicial
+        end_date: Data final
       step:
         name: Nome
         order: Ordem

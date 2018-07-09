@@ -1,0 +1,63 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title"><strong><%= t("vacancy") %></strong>: <%= @vacancy.name %></h3>
+
+    <div class="box-tools">
+      <div class="input-group input-group-sm" style="width: 200px;">
+        <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
+
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-default">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <th><%= t('pipeline') %></th>
+          <th><%= t('min_salary') %></th>
+          <th><%= t('max_salary') %></th>
+          <th><%= t('start_date') %></th>
+          <th><%= t('end_date') %></th>
+          <th><%= t('active') %></th>
+        </tr>
+        <tr>
+          <td><%= @vacancy.id %></td>
+          <td><%= @vacancy.pipeline.name %></td>
+          <td><%= @vacancy.min_salary %></td>
+          <td><%= @vacancy.max_salary %></td>
+          <td><%= l @vacancy.start_date %></td>
+          <td><%= l @vacancy.end_date %></td>
+          <td><%= @vacancy.active %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title"><%= t('description') %></h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <%= @vacancy.description %>
+    </div>
+    <!-- /.box-body -->
+  </div>
+
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title"><%= t('perks') %></h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <%= @vacancy.perks %>
+    </div>
+    <!-- /.box-body -->
+  </div>

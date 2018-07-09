@@ -24,7 +24,7 @@ RSpec.describe Admin::PipelinesController, type: :controller do
       get :show, params: { id: pipeline.id }
     end
 
-    it "renders the index template" do
+    it "renders the show template" do
       expect(response).to render_template(:show)
     end
 
@@ -71,7 +71,7 @@ RSpec.describe Admin::PipelinesController, type: :controller do
     context "with invalid attributes" do
       let(:invalid_attributes) { { name: "" } }
 
-      it "does not create a new user" do
+      it "does not create a new pipeline" do
         expect {
           post :create, params: { pipeline: invalid_attributes }
         }.not_to change(Pipeline, :count)

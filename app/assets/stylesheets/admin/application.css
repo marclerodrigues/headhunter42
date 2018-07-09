@@ -17,4 +17,6 @@
  *= require admin-lte/dist/css/skins/skin-red
  *= require font-awesome/css/font-awesome
  *= require ionicons/dist/css/ionicons
+ *= require select2/dist/css/select2
+ *= require bootstrap-datepicker/dist/css/bootstrap-datepicker.css
  */
