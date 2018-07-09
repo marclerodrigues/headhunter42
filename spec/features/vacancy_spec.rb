@@ -19,13 +19,12 @@ RSpec.describe "Vacancy", type: :feature do
     expect(page).to have_content(vacancy.perks)
     expect(page).to have_content(vacancy.min_salary)
     expect(page).to have_content(vacancy.max_salary)
-    expect(page).to have_content(vacancy.start_date)
-    expect(page).to have_content(vacancy.end_date)
+    expect(page).to have_content(I18n.l(vacancy.start_date))
+    expect(page).to have_content(I18n.l(vacancy.end_date))
   end
 
-  scenario "user creates a new vacancy" do
+  scenario "user creates a new vacancy", ss: true do
     visit(new_admin_vacancy_path)
-
     fill_in('vacancy_name', with: "Trabson")
     select(pipeline.name, from: 'Cargo')
     check('vacancy_active')
@@ -33,12 +32,9 @@ RSpec.describe "Vacancy", type: :feature do
     fill_in('vacancy_perks', with: "Sodexo")
     fill_in('vacancy_min_salary', with: 1000)
     fill_in('vacancy_max_salary', with: 5000)
-    select(1, from: 'vacancy[start_date(3i)]')
-    select('Julho', from: 'vacancy[start_date(2i)]')
-    select(2018, from: 'vacancy[start_date(1i)]')
-    select(1, from: 'vacancy[end_date(3i)]')
-    select('Dezembro', from: 'vacancy[end_date(2i)]')
-    select(2018, from: 'vacancy[end_date(1i)]')
+    fill_in('Data inicial', with: "01/01/2018")
+    fill_in('Data final', with: "06/06/2018")
+
     click_button('Salvar')
 
     expect(page).to have_text("Vaga criada com sucesso!")
@@ -54,13 +50,9 @@ RSpec.describe "Vacancy", type: :feature do
     fill_in('vacancy_perks', with: "Sodexo")
     fill_in('vacancy_min_salary', with: 1000)
     fill_in('vacancy_max_salary', with: 5000)
-    select(1, from: 'vacancy[start_date(3i)]')
-    select('Julho', from: 'vacancy[start_date(2i)]')
-    select(2018, from: 'vacancy[start_date(1i)]')
-    select(1, from: 'vacancy[end_date(3i)]')
-    select('Dezembro', from: 'vacancy[end_date(2i)]')
-    select(2018, from: 'vacancy[end_date(1i)]')
-    click_button('Salvar')
+    fill_in('vacancy_start_date', with: "01/01/2018")
+    fill_in('vacancy_end_date', with: "06/06/2018")
+
     click_button('Salvar')
 
     expect(page).to have_text("Nome não pode ficar em branco")

@@ -40,6 +40,7 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'jquery-rails', '~> 4.3'
 gem 'kaminari', '~> 1.1.1'
 gem 'cocoon', '~>1.2.11'
+gem 'select2-rails', '~>4.0.3' 
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
