@@ -9,7 +9,6 @@ module Admin
     end
 
     def show
-      @pipeline = Pipeline.find(@vacancy.pipeline_id)
     end
 
     def new

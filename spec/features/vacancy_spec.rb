@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Vacancy", type: :feature do
-  let!(:user) { create(:user, role: :admin) }
-  let!(:pipeline) { create(:pipeline) }
+  let(:user) { create(:user, role: :admin) }
+  let(:pipeline) { create(:pipeline) }
   let!(:vacancy) { create(:vacancy, pipeline: pipeline) }
 
   before do
@@ -67,7 +67,7 @@ RSpec.describe "Vacancy", type: :feature do
     expect(page).to have_text("Vaga atualizada com sucesso!")
   end
 
-  scenario "user does not edit the pipeline" do
+  scenario "user does not edit the vacancy" do
     visit (edit_admin_vacancy_path(vacancy.id))
 
     fill_in('vacancy_name', with: "")

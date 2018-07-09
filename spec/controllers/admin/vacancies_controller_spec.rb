@@ -13,7 +13,7 @@ RSpec.describe Admin::VacanciesController, type: :controller do
       expect(response).to render_template(:index)
     end
 
-    it "return a successful response" do
+    it "returns a successful response" do
       expect(response).to be_successful
     end
   end
@@ -50,7 +50,7 @@ RSpec.describe Admin::VacanciesController, type: :controller do
 
   describe "POST#create" do
     context "with valid attributes" do
-      let!(:pipeline) { create(:pipeline) }
+      let(:pipeline) { create(:pipeline) }
       let(:valid_attributes) do
         {
           name: FFaker::JobBR.title,
@@ -83,7 +83,7 @@ RSpec.describe Admin::VacanciesController, type: :controller do
     end
 
     context "with invalid attributes" do
-      let!(:pipeline) { create(:pipeline) }
+      let(:pipeline) { create(:pipeline) }
       let(:invalid_attributes) do
         {
           description: FFaker::Lorem.paragraph,
@@ -117,7 +117,7 @@ RSpec.describe Admin::VacanciesController, type: :controller do
       get :edit, params: { id: vacancy.id }
     end
 
-    it "works correctly" do
+    it "returns a successful response" do
       expect(response).to be_successful
     end
 
