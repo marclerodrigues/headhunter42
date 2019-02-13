@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  user: postgres
+  enconding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: headhunter_development
+
+test:
+  <<: *default
+  database: headhunter_test
+
+production:
+  <<: *default
+  database: headhunter_production
+  username: headhunter
+  password: <%= ENV['HEADHUNTER_DATABASE_PASSWORD'] %>
