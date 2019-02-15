@@ -25,14 +25,47 @@ The following gems were used in the project as well:
 
 ## How to setup?
 
-1. First check if your Rails and Ruby are matching the versions above;
-2. Also, install Yarn in your machine if you don't have it installed yet.
-Check out [Yarn's website](https://yarnpkg.com/lang/en/docs/install/) for how to setup for your machine.
-4. Run `yarn install`;
-5. After, run `bundle install` and check if any of the gems in the gemfile are up-to-date;
-6. If not, run `bundle update` or install the missing gems in your machine;
-7. With the project environment created, run `rails db:create`;
-8. And then run `rails db:migrate`, that will get your database set and ready to go;
+1. First check if your Ruby, Rails and PostgresQL are matching the versions above and properly configured;
+
+2. Then you can run:
+
+  ```
+  bin/setup
+  ```
+
+  All the required steps will be performed and then you can run your server:
+
+  ```
+  bundle exec rails server -p 3000 -b 0.0.0.0
+  ```
+
+  Then you can go to `localhost:3000` and you will see the project is up and running.
+
+3. Remember, sometimes you will have to tweek the `config/database.yml` file to match your database configuration. If you get any errors related to the database configuration you can tweek your file and re-run the `bin/setup` command.
+
+## How to setup using docker and docker-compose?
+
+Presuming you have properly configured docker and docker-compose in your machine, first we need to enter the container:
+
+```
+docker-compose run --rm web bash
+```
+
+This command will pull/build all the necessary docker images, leaving you with a prompt.
+
+Then we just need to run the setup command setting the docker env:
+
+```
+DOCKER_SETUP=true bin/setup
+```
+
+All the required steps will be performed and we just need to exit the container and start the process in daemon mode:
+
+```
+docker-compose up -d
+```
+
+Then you can go to `localhost:3000` and you will see the project is up and running.
 
 ## How to run the test suite?
 
