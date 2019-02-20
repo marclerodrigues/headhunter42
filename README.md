@@ -1,13 +1,7 @@
-# HeadHunter 42 :construction_worker:
+# HeadHunter42 :construction_worker:
 
 ## What is it?
-
-The 'HeadHunter 42' is an open source project from Codeminer 42
-which pretends to help companies to organize and automate the
-hiring process.
-
-We are focused at first in solving our problem, but in a future maybe make the tool even more portable
-and easy to use by any person out there!
+An open-source project from Codeminer42 which intends to help companies to organize and automate most of the hiring process.
 
 ## Dependencies
 
@@ -16,12 +10,6 @@ The application was created with the following environment:
 - `Ruby 2.5.0`
 - `Rails 5.1.6`
 - `PostgreSQL 10.2`
-
-###### Gems
-
-The following gems were used in the project as well:
-
-* gems pending
 
 ## How to setup?
 
@@ -69,7 +57,7 @@ Then you can go to `localhost:3000` and you will see the project is up and runni
 
 ## How to run the test suite?
 
-1. Now just run `bundle exec rspec` and see the API being tested.
+1. You can just run `bundle exec rspec`.
 
 ## How to deploy?
 
@@ -98,11 +86,11 @@ find information about that in [Heroku's website](https://www.heroku.com/) and a
 
 If you want to contribute for the 'Headhunter 42', clone the project GitLab repository with the following:
 
-```git clone https://gitlab42.com/marclerodrigues/Headhunter42```
+```git clone git@github.com:marclerodrigues/headhunter.git```
 
 Create a new branch and make your contributions, after push to the created branch and
-request the merge. You code will be revised and merged with the master branch if
-no modification is needed.
+request the merge. You code will be reviewed and merged with the master branch if
+no modification are needed.
 
 ## Project's Guide Lines
 
