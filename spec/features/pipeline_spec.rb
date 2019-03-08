@@ -21,6 +21,14 @@ RSpec.describe "Pipeline", type: :feature do
     expect(page).to have_content(step2.description)
   end
 
+  scenario "user visit show and click button back" do
+    visit (admin_pipeline_path(pipeline.id))
+
+    find('.btn-info').click
+
+    expect(current_path).to eq '/admin/pipelines'
+  end
+
   scenario "user creates a new pipeline" do
     visit (new_admin_pipeline_path)
 

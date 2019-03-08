@@ -1,0 +1,9 @@
+.back-button {
+  margin-left: 10px;
+  height: 30px;
+}
+
+.box-tools {
+  display: flex;
+  flex-direction: row;
+}
