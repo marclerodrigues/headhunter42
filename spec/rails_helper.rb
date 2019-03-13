@@ -78,4 +78,6 @@ RSpec.configure do |config|
     example.run
     DatabaseCleaner.clean
   end
+
+  config.include IntegrationHelpers, type: :feature
 end

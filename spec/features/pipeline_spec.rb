@@ -8,7 +8,7 @@ RSpec.describe "Pipeline", type: :feature do
 
   before do
     create(:company)
-    visit_sign_in_and_fill_form
+    sign_in user
   end
 
   scenario "action show pipeline also show their steps" do
@@ -63,14 +63,5 @@ RSpec.describe "Pipeline", type: :feature do
     click_button('Salvar')
 
     expect(page).to have_text("Nome não pode ficar em branco")
-  end
-
-  def visit_sign_in_and_fill_form
-    visit('/user/sign_in')
-
-    fill_in('user[email]', with: user.email)
-    fill_in('user[password]', with: user.password)
-
-    click_button('Log in')
   end
 end

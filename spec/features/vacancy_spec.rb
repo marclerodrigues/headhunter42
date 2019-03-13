@@ -7,7 +7,7 @@ RSpec.describe "Vacancy", type: :feature do
 
   before do
     create(:company)
-    visit_sign_in_and_fill_form
+    sign_in user
   end
 
   scenario "action show vacancy also show their pipeline" do
@@ -25,10 +25,10 @@ RSpec.describe "Vacancy", type: :feature do
 
   scenario "user creates a new vacancy", ss: true do
     visit(new_admin_vacancy_path)
-    fill_in('vacancy_name', with: "Trabson")
+    fill_in('vacancy_name', with: "Frontend Teresina")
     select(pipeline.name, from: 'Cargo')
     check('vacancy_active')
-    fill_in('vacancy_description', with: "Trabson for the win")
+    fill_in('vacancy_description', with: "Javascript, CSS and HTML")
     fill_in('vacancy_perks', with: "Sodexo")
     fill_in('vacancy_min_salary', with: 1000)
     fill_in('vacancy_max_salary', with: 5000)
@@ -37,7 +37,7 @@ RSpec.describe "Vacancy", type: :feature do
 
     click_button('Salvar')
 
-    expect(page).to have_text("Vaga criada com sucesso!")
+    expect(page).to have_text(I18n.t('messages.vacancy_created'))
   end
 
   scenario "user does not create a vacancy" do
@@ -46,7 +46,7 @@ RSpec.describe "Vacancy", type: :feature do
     fill_in('vacancy_name', with: "")
     select(pipeline.name, from: 'Cargo')
     check('vacancy_active')
-    fill_in('vacancy_description', with: "Trabson for the win")
+    fill_in('vacancy_description', with: "Javascript, CSS and HTML")
     fill_in('vacancy_perks', with: "Sodexo")
     fill_in('vacancy_min_salary', with: 1000)
     fill_in('vacancy_max_salary', with: 5000)
@@ -55,16 +55,16 @@ RSpec.describe "Vacancy", type: :feature do
 
     click_button('Salvar')
 
-    expect(page).to have_text("Nome não pode ficar em branco")
+    expect(page).to have_text(I18n.t('errors.messages.blank'))
   end
 
   scenario "user edit the vacancy" do
     visit (edit_admin_vacancy_path(vacancy.id))
 
-    fill_in('vacancy_name', with: "Biribiri")
+    fill_in('vacancy_name', with: "Backend Batatais")
     click_button('Salvar')
 
-    expect(page).to have_text("Vaga atualizada com sucesso!")
+    expect(page).to have_text(I18n.t('messages.vacancy_updated'))
   end
 
   scenario "user does not edit the vacancy" do
@@ -73,15 +73,6 @@ RSpec.describe "Vacancy", type: :feature do
     fill_in('vacancy_name', with: "")
     click_button('Salvar')
 
-    expect(page).to have_text("Nome não pode ficar em branco")
-  end
-
-  def visit_sign_in_and_fill_form
-    visit('/user/sign_in')
-
-    fill_in('user[email]', with: user.email)
-    fill_in('user[password]', with: user.password)
-
-    click_button('Log in')
+    expect(page).to have_text(I18n.t('errors.messages.blank'))
   end
 end
