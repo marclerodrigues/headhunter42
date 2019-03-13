@@ -1,6 +1,13 @@
 <div class="box box-warning">
   <div class="box-header with-border">
     <h3 class="box-title"><%= action_message %></h3>
+    <div class="box-tools">
+      <div>
+        <%= link_to admin_pipelines_path, class: "btn btn-info btn-circle back-button", data: { turbolinks: "false" } do %>
+          <i class="glyphicon glyphicon-arrow-left"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
   <!-- /.box-header -->
   <div class="box-body">
