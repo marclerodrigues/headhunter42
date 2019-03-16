@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180703181124) do
+ActiveRecord::Schema.define(version: 20190220121339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: :cascade do |t|
+    t.bigint "vacancy_id"
+    t.bigint "user_id"
+    t.string "resume_id"
+    t.string "resume_filename"
+    t.string "resume_size"
+    t.string "resume_content_type"
+    t.string "cover_letter_id"
+    t.string "cover_letter_filename"
+    t.string "cover_letter_size"
+    t.string "cover_letter_content_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_applications_on_user_id"
+    t.index ["vacancy_id"], name: "index_applications_on_vacancy_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -103,6 +120,8 @@ ActiveRecord::Schema.define(version: 20180703181124) do
     t.index ["pipeline_id"], name: "index_vacancies_on_pipeline_id"
   end
 
+  add_foreign_key "applications", "users"
+  add_foreign_key "applications", "vacancies"
   add_foreign_key "skills", "steps"
   add_foreign_key "steps", "pipelines"
   add_foreign_key "vacancies", "pipelines"

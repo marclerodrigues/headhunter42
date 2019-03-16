@@ -24,9 +24,11 @@
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
 
-      <div class="attachment-block clearfix">
-        <%= image_tag(@company_form.logo_url, width: 300, height: 300, class:"attachment-img") %>
-      </div>
+      <% if @company_form.logo_url %>
+        <div class="attachment-block clearfix">
+          <%= image_tag(@company_form.logo_url, width: 300, height: 300, class:"attachment-img") %>
+        </div>
+      <% end %>
 
       <%= f.attachment_field :logo%>
 

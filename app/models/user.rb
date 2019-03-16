@@ -2,6 +2,8 @@ class User < ApplicationRecord
   extend Enumerize
   attr_accessor :skip_password_validation
 
+  has_many :applications, dependent: :destroy
+
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :invitable
   validates :first_name, :last_name, :email, presence: true
@@ -12,6 +14,10 @@ class User < ApplicationRecord
   scope :reviewers, -> { where(role: :reviewer) }
   scope :candidates, -> { where(role: :candidate) }
   scope :admins_and_reviewers, -> { where(role: [:admin, :reviewer]) }
+
+  def to_s
+    "#{first_name} #{last_name}"
+  end
 
   private
 

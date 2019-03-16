@@ -1,0 +1,5 @@
+<% @vacancies.each do |vacancy| %>
+  <%= vacancy.name %>
+  <%= vacancy.description %>
+  <%= link_to 'Details', vacancy_path(vacancy) %>
+<% end %>
