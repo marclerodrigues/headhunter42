@@ -1,6 +1,6 @@
 <div class="box">
   <div class="box-header">
-    <h3 class="box-title"><strong><%= t("vacancy") %></strong>: <%= @vacancy.name %></h3>
+    <h3 class="box-title"><strong><%= t("application") %></strong>: <%= @application.user %></h3>
 
     <div class="box-tools">
       <div class="input-group input-group-sm" style="width: 200px;">
@@ -20,21 +20,11 @@
       <tbody>
         <tr>
           <th>ID</th>
-          <th><%= t('pipeline') %></th>
-          <th><%= t('min_salary') %></th>
-          <th><%= t('max_salary') %></th>
-          <th><%= t('start_date') %></th>
-          <th><%= t('end_date') %></th>
-          <th><%= t('active') %></th>
+          <th><%= Application.human_attribute_name('name') %></th>
         </tr>
         <tr>
-          <td><%= @vacancy.id %></td>
-          <td><%= @vacancy.pipeline.name %></td>
-          <td><%= @vacancy.min_salary %></td>
-          <td><%= @vacancy.max_salary %></td>
-          <td><%= @vacancy.start_date ? l(@vacancy.start_date) : '-' %></td>
-          <td><%= @vacancy.end_date ? l(@vacancy.end_date) : '-' %></td>
-          <td><%= @vacancy.active %></td>
+          <td><%= @application.id %></td>
+          <td><%= @application.user %></td>
         </tr>
       </tbody>
     </table>
@@ -42,22 +32,22 @@
 
   <div class="box">
     <div class="box-header with-border">
-      <h3 class="box-title"><%= t('description') %></h3>
+      <h3 class="box-title"><%= t('resume') %></h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-      <%= @vacancy.description %>
+      <%= link_to "Resume", attachment_url(@application, :resume) %>
     </div>
     <!-- /.box-body -->
   </div>
 
   <div class="box">
     <div class="box-header with-border">
-      <h3 class="box-title"><%= t('perks') %></h3>
+      <h3 class="box-title"><%= t('cover_letter') %></h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-      <%= @vacancy.perks %>
+      <%= link_to "Cover Letter", attachment_url(@application, :cover_letter) %>
     </div>
     <!-- /.box-body -->
   </div>

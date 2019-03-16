@@ -1,0 +1,63 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title"><%= t("applications") %></h3>
+
+    <div class="box-tools">
+      <div class="input-group input-group-sm" style="width: 300px;">
+        <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
+
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-default">
+            <i class="fa fa-search"></i>
+          </button>
+          <%= link_to new_admin_application_path, class: "btn btn-default", data: { turbolinks: "false" } do %>
+            <i class="fa fa-plus"></i> <%= t("create_application") %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- /.box-header -->
+  <div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <th><%= @applications.model.human_attribute_name('name') %></th>
+        </tr>
+        <% @applications.each do |application| %>
+        <tr>
+          <td><%= application.id %></td>
+          <td><%= application.user %></td>
+          <td style="width: 150px">
+            <%= link_to admin_application_path(application), method: :get, class: "btn btn-primary btn-circle" do %>
+                <i class="fa fa-eye"></i>
+            <% end %>
+            <%= link_to edit_admin_application_path(application), method: :get, class: "btn btn-success btn-circle" do %>
+                <i class="fa fa-edit"></i>
+            <% end %>
+            <%= link_to admin_application_path(application), method: :delete, class: "btn btn-danger btn-circle", data: {confirm: t("messages.confirm_with")} do %>
+                <i class="fa fa-remove"></i>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="row">
+      <div class="col-sm-5">
+      </div>
+      <div class="col-sm-7">
+        <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+          <ul class="pagination">
+            <li><%= paginate @applications %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.box-body -->
+</div>

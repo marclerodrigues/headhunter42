@@ -1,0 +1,9 @@
+<%= form_for @application do |form| %>
+  <%= form.hidden_field :vacancy_id, value: params[:vacancy_id] %>
+  <%= form.text_field :first_name %>
+  <%= form.text_field :last_name %>
+  <%= form.email_field :email %>
+  <%= form.attachment_field :resume %>
+  <%= form.attachment_field :cover_letter %>
+  <%= form.submit('Submit Application') %>
+<% end %>

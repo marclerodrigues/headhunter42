@@ -20,6 +20,8 @@ pt-BR:
   pipeline: "Cargo"
   vacancies: "Vagas"
   vacancy: "Vaga"
+  applications: "Aplicações"
+  application: "Aplicação"
   step: "Etapa"
   steps: "Etapas"
   skill: "Habilidade"

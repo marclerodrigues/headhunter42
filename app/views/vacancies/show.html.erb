@@ -1,0 +1,8 @@
+<%= @vacancy.name %>
+<%= @vacancy.description %>
+<%= @vacancy.perks %>
+<% if @vacancy.min_salary && @vacancy.max_salary %>
+  Salary range: <%= @vacancy.min_salary %> - <%= @vacancy.max_salary %>
+<% end %>
+<%= link_to 'Apply', new_application_path(vacancy_id: @vacancy.id) %>
+
