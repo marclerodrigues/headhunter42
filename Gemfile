@@ -40,7 +40,7 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'jquery-rails', '~> 4.3'
 gem 'kaminari', '~> 1.1.1'
 gem 'cocoon', '~>1.2.11'
-gem 'select2-rails', '~>4.0.3' 
+gem 'select2-rails', '~>4.0.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -68,6 +68,7 @@ end
 
 group :test do
   gem 'rails-controller-testing', '~> 1.0.2'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
 end
 
 group :development do
